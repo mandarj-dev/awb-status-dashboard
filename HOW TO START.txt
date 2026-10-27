@@ -1,0 +1,55 @@
+AWB STATUS DASHBOARD - HOW TO START
+===================================
+
+ON YOUR WINDOWS COMPUTER
+------------------------
+1. Double-click  run.bat
+   A black window opens - keep it open while you use the dashboard.
+   (The first time it installs what it needs. This takes 1-2 minutes.)
+
+2. Your browser opens the Setup page. For each of the two databases:
+     - Click "Paste connection link" and paste the MONGO_URI line
+       from your Smart Tracking Dashboard's .env file
+       (or type the server address, username and password).
+     - Click "Test connection".
+     - Choose the database and the collection.
+     - Check that the sample shipment looks right.
+
+3. Click "Save and open dashboard". That's it.
+
+Next time: double-click the "AWB Dashboard" shortcut on your Desktop.
+To stop: close the black window.
+
+
+ON THE SERVER (AWS / Linux)
+---------------------------
+1. Copy this zip to the server and unzip it.
+2. Run:   sudo bash install-on-server.sh
+3. Open the web address it shows (port 8010) and fill in the same Setup page.
+   Tip: set a Settings PIN in step 3 so nobody else can change the connection.
+
+It runs in the background and restarts by itself after a reboot.
+If the page doesn't open, allow TCP port 8010 in the AWS Security Group.
+
+
+STATUS NAMES AND CLOSED SHIPMENTS
+---------------------------------
+Status codes are shown as names from  Dispatch-status-Mapping.xlsx  in this folder
+(for example 2 = In-transit). To change a name, edit that file in Excel and restart.
+
+AWBs with status 5 (Delivered), 13 (RTO Delivered), 14 (Pickup Cancelled),
+15 (Lost) or 16 (Damaged) are closed and are skipped.
+On AWB Check you can click "Show them" to see them anyway.
+
+
+OPEN CASES FILTERS
+------------------
+The date range at the top uses the ORDER DATE (status.order_date).
+Pick one or more couriers and statuses from the Courier and Current status boxes.
+
+
+IF SOMETHING GOES WRONG
+-----------------------
+Look for a line starting with [FAIL] in the black window - it says what to fix.
+The Setup page also explains connection problems in plain words.
+To change the database later, click "Settings" at the top of the dashboard.

@@ -1,0 +1,26 @@
+[project]
+name = "awb-status-dashboard"
+version = "1.0.0"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi>=0.115",
+  "uvicorn>=0.30",
+  "motor>=3.5",
+  "pymongo>=4.8",
+  "python-dotenv>=1.0",
+  "python-dateutil>=2.9",
+  "tzdata>=2024.1",
+  "openpyxl>=3.1",
+]
+
+[tool.vercel]
+entrypoint = "backend.app.main:app"
+
+# Build the Vue SPA into frontend/dist before the Python function is packaged.
+[tool.vercel.scripts]
+build = "cd frontend && npm ci && npm run build"
+
+# Promote frontend/dist to the CDN when possible; keep a copy in the function bundle
+# so the SPA fallback routes in main.py still work.
+[tool.vercel.fastapi.static]
+cdn = true
