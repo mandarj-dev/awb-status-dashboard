@@ -1,0 +1,50 @@
+# ---- secrets / local config ----
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+env/
+ENV/
+*.egg-info/
+.eggs/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.log
+
+# ---- Node / Vue (Vite) ----
+frontend/node_modules/
+frontend/dist/
+node_modules/
+*.local
+
+# ---- Vercel ----
+.vercel
+
+# ---- OS / editors ----
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# ---- misc ----
+*.tmp
+*.temp
+.cache/
