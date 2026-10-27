@@ -6,12 +6,12 @@
         and check the sample shipment. Then click <b>Save</b>. You only do this once.</p>
     </div>
 
-    <div v-if="status?.readonly_env" class="warnbox vercel-note">
+    <!-- <div v-if="status?.readonly_env" class="warnbox vercel-note">
       This app is running on Vercel (read-only filesystem). The Setup page can <b>test</b> connections, but
       settings must be saved as <b>Environment Variables</b> in the Vercel project
       (<code>ST_MONGO_URI</code>, <code>ST_DB_NAME</code>, <code>ST_COLLECTION</code>, and the matching
       <code>PF_*</code> keys), then redeploy. See the README “Deploy on Vercel” section.
-    </div>
+    </div> -->
 
     <div v-if="loadError" class="error">{{ loadError }}</div>
 
